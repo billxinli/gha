@@ -1,0 +1,13 @@
+name: release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: bash $GITHUB_WORKSPACE/.github/setup-npm.sh ${{ secrets.GITHUB_TOKEN }}
+      - uses: ahmadnassri/action-semantic-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
