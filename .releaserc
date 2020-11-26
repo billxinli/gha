@@ -33,7 +33,7 @@
     "@semantic-release/github",
     "@semantic-release/npm",
         ["@semantic-release/exec", {
-          "prepareCmd": "./my-build-script.sh ${nextRelease.version}",
+          "prepareCmd": ".github/my-build-script.sh ${nextRelease.version}",
         }],
   ]
 }
