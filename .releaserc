@@ -35,5 +35,9 @@
         ["@semantic-release/exec", {
           "prepareCmd": "bash .github/my-build-script.sh ${nextRelease.version}",
         }],
+            ["@semantic-release/git", {
+              "assets": ["lib/ver.js"],
+              "message": "chore(release): ${nextRelease.version} version file"
+            }]
   ]
 }
