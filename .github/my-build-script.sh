@@ -1,5 +1,5 @@
 #!/bin/bash
-
+pwd
 echo "in build"
 echo $1
 pwd

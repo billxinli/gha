@@ -1,0 +1,12 @@
+name: fail
+
+on: [push, pull_request]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "before"
+      - run: bash $GITHUB_WORKSPACE/.github/fail.sh
+      - run: echo "after"
