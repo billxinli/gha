@@ -9,5 +9,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
       - run: echo "before"
-      - run: bash $GITHUB_WORKSPACE/.github/fail.sh
+      - run: bash $GITHUB_WORKSPACE/.github/env.sh
       - run: echo "after"
+      - run: echo "hello I am 123"
+        if: env.API_VERSION == '123'
+      - run: echo "hello I am not 123"
+        if: env.API_VERSION != '123'
