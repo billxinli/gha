@@ -27,6 +27,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           repository: hashtagpaid/database/database
-          tags:
-            - database/database:${{ steps.release.outputs.release-version}}
-            - database/database:latest
+          tags: database/database:${{ steps.release.outputs.release-version}}, database/database:latest
