@@ -1,0 +1,15 @@
+name: test
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - run: echo ${{ github.event.pull_request.merge_commit_sha }}
